@@ -271,6 +271,8 @@
     <string name="toast_profile_updated_complete">更新配置 %s 成功</string>
     <string name="toast_profile_updated_failed">更新配置 %1$s 失败：%2$s</string>
     <string name="external_control_activity">外部控制</string>
+    <string name="external_control_confirm_title">允许控制 VPN？</string>
+    <string name="external_control_confirm_message">某个应用或快捷方式请求启动、停止或切换 VPN。停止后可能恢复直接连接。仅在你主动发起此操作时继续。</string>
     <string name="external_control_started">Clash.Meta 服务已启动</string>
     <string name="external_control_stopped">Clash.Meta 服务已停止</string>
     <string name="import_from_qr_no_permission">相机权限受限，请前往设置开启。</string>

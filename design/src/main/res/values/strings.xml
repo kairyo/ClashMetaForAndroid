@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="PluralsCandidate">
-    <string name="launch_name_meta">Clash Meta</string>
+    <string name="launch_name_meta">CMFA Hardened</string>
     <string name="launch_name_alpha">Clash Meta Alpha</string>
-    <string name="application_name_meta">Clash Meta for Android</string>
+    <string name="application_name_meta">CMFA Hardened</string>
     <string name="application_name_alpha">Clash Meta for Android Alpha</string>
 
     <string name="stopped">Stopped</string>
@@ -357,6 +357,8 @@
     <string name="toast_profile_updated_complete">Update profile %s completed</string>
     <string name="toast_profile_updated_failed">Update profile %1$s failed: %2$s</string>
     <string name="external_control_activity">External Control</string>
+    <string name="external_control_confirm_title">Allow VPN control?</string>
+    <string name="external_control_confirm_message">An app or shortcut requested to start, stop, or toggle this VPN. Stopping it may restore direct connections. Continue only if you initiated this request.</string>
     <string name="external_control_started">Clash.Meta service started</string>
     <string name="external_control_stopped">Clash.Meta service stopped</string>
 

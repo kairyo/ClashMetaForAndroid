@@ -100,8 +100,6 @@ jobs:
           echo key.alias="$SIGNING_KEY_ALIAS" >> signing.properties
           echo key.password="$SIGNING_KEY_PASSWORD" >> signing.properties
             
-          echo "cat signing.properties"
-          cat signing.properties
 
       - name: Release Build
         if: success()

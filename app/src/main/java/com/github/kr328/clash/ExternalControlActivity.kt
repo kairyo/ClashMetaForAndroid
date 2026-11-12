@@ -1,6 +1,7 @@
 package com.github.kr328.clash
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -27,7 +28,27 @@ class ExternalControlActivity : Activity(), CoroutineScope by MainScope() {
         @Suppress("DEPRECATION")
         overridePendingTransition(0, 0)
 
-        when(intent.action) {
+        val action = intent.action
+        if (action == Intents.ACTION_START_CLASH ||
+            action == Intents.ACTION_STOP_CLASH ||
+            action == Intents.ACTION_TOGGLE_CLASH) {
+            val dialog = AlertDialog.Builder(this)
+                .setTitle(R.string.external_control_confirm_title)
+                .setMessage(R.string.external_control_confirm_message)
+                .setNegativeButton(android.R.string.cancel) { _, _ -> finish() }
+                .setPositiveButton(android.R.string.ok) { _, _ -> handleAction(action) }
+                .setOnCancelListener { finish() }
+                .create()
+            dialog.setCanceledOnTouchOutside(false)
+            dialog.show()
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE).filterTouchesWhenObscured = true
+            return
+        }
+        handleAction(action)
+    }
+
+    private fun handleAction(action: String?) {
+        when(action) {
             Intent.ACTION_VIEW -> {
                 val uri = intent.data ?: return finish()
                 val url = uri.getQueryParameter("url") ?: return finish()

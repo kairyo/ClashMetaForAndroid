@@ -1,9 +1,6 @@
 name: Build Pre-Release
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 jobs:
   BuildPreRelease:
@@ -61,8 +58,6 @@ jobs:
           echo key.alias="$SIGNING_KEY_ALIAS" >> signing.properties
           echo key.password="$SIGNING_KEY_PASSWORD" >> signing.properties
             
-          echo "cat signing.properties"
-          cat signing.properties
 
       - name: Pre-release Build
         if: success()
